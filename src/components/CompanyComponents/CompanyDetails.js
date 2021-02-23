@@ -3,7 +3,6 @@ import styled from "styled-components";
 import axios from "axios";
 import JobByCompany from "../JobComponents/JobByCompany.js";
 import HoverRating from "../UtilComponents/HoverRating.js";
-import { useAuth0 } from "@auth0/auth0-react";
 import AuthService from "../../services/auth-service";
 import authHeader from "../../services/auth-header";
 
@@ -21,8 +20,6 @@ const CompanyContainer = styled.div`
 
 const CompanyDetails = (props) => {
   const [company, setCompany] = useState({});
-  const [jobs, setJobs] = useState([]);
-  let { user, isAuthenticated } = useAuth0();
   const [currentUser, setcurrentUser] = useState();
 
   const {

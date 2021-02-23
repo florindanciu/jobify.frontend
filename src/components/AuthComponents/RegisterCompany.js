@@ -138,7 +138,7 @@ export default class Register extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="row mt-5">
+        <div className="row">
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
             <img
               className="img-fluid"
