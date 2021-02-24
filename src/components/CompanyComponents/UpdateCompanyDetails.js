@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
 import axios from "axios";
-import { Card } from "react-bootstrap";
 import authHeader from "../../services/auth-header";
 
 export default function UpdateCompanyDetails() {
@@ -48,12 +47,8 @@ export default function UpdateCompanyDetails() {
   };
 
   return (
-    <Card
-      style={{ marginTop: "3rem", marginLeft: "18rem", marginRight: "18rem" }}
-    >
-      <Card.Body>
-        <Card.Title style={{ textAlign: "center" }}>Update Company</Card.Title>
-        <form className="form-signin">
+        <form style={{marginBottom:"5%", marginTop:"5%"}} className="form-signin">
+        <h3 style={{marginBottom:"20%"}}>Update Company</h3>
           <p>
             <input
               className="form-control"
@@ -94,17 +89,16 @@ export default function UpdateCompanyDetails() {
               required
             />
           </p>
-          <button className="btn btn-success" onClick={updateHandler}>
+          <button className="btn btn-primary" onClick={updateHandler}>
             Update
           </button>
           <button
+            style={{marginLeft:"10px"}}
             className="btn btn-danger"
             onClick={() => history.push(`/company/${companyId}`)}
           >
             Cancel
           </button>
         </form>
-      </Card.Body>
-    </Card>
   );
 }
