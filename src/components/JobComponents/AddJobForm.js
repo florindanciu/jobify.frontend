@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import authHeader from "../../services/auth-header";
 
 export default function AddJobForm(props) {
+  const history = useHistory();
   const [job, setJob] = useState({});
   const {
     match: { params },
@@ -45,12 +47,13 @@ export default function AddJobForm(props) {
   return (
     <div>
       <form
+        style={{marginBottom:"5%", marginTop:"5%"}}
         className="form-signin"
         method="post"
         action="/login"
         onSubmit={submitForm}
       >
-        <h2 className="form-signin-heading">Add job</h2>
+        <h2 style={{marginBottom:"20%"}} className="form-signin-heading">Add job</h2>
         <p>
           <input
             type="text"
@@ -118,9 +121,16 @@ export default function AddJobForm(props) {
             ))}
           </select>
         </p>
-        <button className="btn btn-lg btn-primary btn-block" type="submit">
+        <button className="btn btn-primary" type="submit">
           Add job
         </button>
+        <button
+            style={{marginLeft:"10px"}}
+            className="btn btn-danger"
+            onClick={() => history.push(`/company/${companyId}`)}
+          >
+            Cancel
+          </button>
       </form>
     </div>
   );
