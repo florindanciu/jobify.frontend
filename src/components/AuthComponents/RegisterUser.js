@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-
 import Form from "react-validation/build/form";
 import Input from "react-validation/build/input";
 import CheckButton from "react-validation/build/button";
 import { isEmail } from "validator";
-
 import AuthService from "../../services/auth-service";
 
 const required = (value) => {
@@ -48,6 +46,7 @@ const vpassword = (value) => {
 };
 
 export default class Register extends Component {
+  
   constructor(props) {
     super(props);
     this.handleRegister = this.handleRegister.bind(this);
@@ -70,6 +69,7 @@ export default class Register extends Component {
       message: "",
     };
   }
+  
 
   // setUserImage() {
   //   this.setState({
@@ -148,7 +148,9 @@ export default class Register extends Component {
         }
       );
     }
-    this.props.history.push("/login", { response: "You are now registered. Please Login." });
+    this.props.history.push("/login", {
+      response: "You are now registered. Please Login.",
+    });
     window.location.reload();
   }
 
@@ -172,88 +174,89 @@ export default class Register extends Component {
             >
               {!this.state.successful && (
                 <div>
-                  <h2 className="form-signin-heading">Register new user</h2>
-                  <p>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      placeholder="username"
-                      name="username"
-                      value={this.state.username}
-                      onChange={this.onChangeUsername}
-                      validations={[required, vusername]}
-                    />
-                  </p>
-                  <p>
-                    <Input
-                      type="text"
-                      className="form-control"
-                      placeholder="email"
-                      name="email"
-                      value={this.state.email}
-                      onChange={this.onChangeEmail}
-                      validations={[required, email]}
-                    />
-                  </p>
-                  <p>
-                    <Input
-                      type="password"
-                      className="form-control"
-                      placeholder="password"
-                      name="password"
-                      value={this.state.password}
-                      onChange={this.onChangePassword}
-                      validations={[required, vpassword]}
-                    />
-                  </p>
-                  <p>
-                    <select
-                      class="form-select"
-                      name="jobRole"
-                      onChange={this.onChangeJobRole}
-                    >
-                      <option selected defaultValue value="Software Engineer">
-                        Software Engineer
-                      </option>
-                      <option value="Fullstack Developer">
-                        Fullstack Developer
-                      </option>
-                      <option value="Frontend Developer">
-                        Frontend Developer
-                      </option>
-                      <option value="Backend Developer">
-                        Backend Developer
-                      </option>
-                      <option value="Database Administration">
-                        Database Administration
-                      </option>
-                      <option value="IT Architect">IT Architect</option>
-                    </select>
-                  </p>
-                  <p>
-                    <select
-                      class="form-select"
-                      name="gender"
-                      onChange={this.onChangeGender}
-                    >
-                      <option selected value="Male">
-                        Male
-                      </option>
-                      <option value="Female">Female</option>
-                    </select>
-                  </p>
-                  <hr />
-                  <p>
-                    <label for="avatar">Choose a profile picture:</label>
-                    <input
-                      className="mt-4"
-                      type="file"
-                      id="image"
-                      name="image"
-                      accept="image/png, image/jpeg"
-                    ></input>
-                  </p>
-                  {/* <p>
+                  <h4 className="form-signin-heading">Create a New Account</h4>
+                  <div style={{ marginTop: "40px" }}>
+                    <p>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        placeholder="username"
+                        name="username"
+                        value={this.state.username}
+                        onChange={this.onChangeUsername}
+                        validations={[required, vusername]}
+                      />
+                    </p>
+                    <p>
+                      <Input
+                        type="text"
+                        className="form-control"
+                        placeholder="email"
+                        name="email"
+                        value={this.state.email}
+                        onChange={this.onChangeEmail}
+                        validations={[required, email]}
+                      />
+                    </p>
+                    <p>
+                      <Input
+                        type="password"
+                        className="form-control"
+                        placeholder="password"
+                        name="password"
+                        value={this.state.password}
+                        onChange={this.onChangePassword}
+                        validations={[required, vpassword]}
+                      />
+                    </p>
+                    <p>
+                      <select
+                        class="form-select"
+                        name="jobRole"
+                        onChange={this.onChangeJobRole}
+                      >
+                        <option selected defaultValue value="Software Engineer">
+                          Software Engineer
+                        </option>
+                        <option value="Fullstack Developer">
+                          Fullstack Developer
+                        </option>
+                        <option value="Frontend Developer">
+                          Frontend Developer
+                        </option>
+                        <option value="Backend Developer">
+                          Backend Developer
+                        </option>
+                        <option value="Database Administration">
+                          Database Administration
+                        </option>
+                        <option value="IT Architect">IT Architect</option>
+                      </select>
+                    </p>
+                    <p>
+                      <select
+                        class="form-select"
+                        name="gender"
+                        onChange={this.onChangeGender}
+                      >
+                        <option selected value="Male">
+                          Male
+                        </option>
+                        <option value="Female">Female</option>
+                      </select>
+                    </p>
+                    <hr />
+                    <p>
+                      <label for="avatar">Choose a profile picture:</label>
+                      <input
+                        className="mt-4"
+                        type="file"
+                        id="image"
+                        name="image"
+                        accept="image/png, image/jpeg"
+                      ></input>
+                    </p>
+                    {/* <p>
                 <input
                   type="text"
                   id="image"
@@ -263,12 +266,14 @@ export default class Register extends Component {
                   required
                 />
               </p> */}
-                  <button
-                    className="btn btn-lg btn-primary btn-block mt-3"
-                    type="submit"
-                  >
-                    Sign up
-                  </button>
+                    <button
+                      className="btn btn-primary"
+                      type="submit"
+                    >
+                      Sign up
+                    </button>
+                    <a style={{marginLeft: "10px"}} className="btn btn-danger" href="/">Cancel</a>
+                  </div>
                 </div>
               )}
               {this.state.message && (

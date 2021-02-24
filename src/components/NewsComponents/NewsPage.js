@@ -16,7 +16,7 @@ const NewsPage = () => {
           style={{
             backgroundColor: "AliceBlue",
             margin: "auto",
-            width: "60%",
+            width: "50%",
           }}
         >
           <div className="card-body">

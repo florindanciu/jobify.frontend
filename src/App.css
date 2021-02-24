@@ -41,7 +41,6 @@ body {
   border-radius: 20px;
   background-color: #eefcff;
   align-items: center;
-  grid-template-rows: max-content 150px 1fr;
   border: none;
 }
 

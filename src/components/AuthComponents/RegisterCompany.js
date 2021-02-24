@@ -142,7 +142,7 @@ export default class Register extends Component {
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
             <img
               className="img-fluid"
-              src={process.env.PUBLIC_URL + "/companies.jpg"}
+              src={process.env.PUBLIC_URL + "/registerCompany.jpg"}
             />
           </div>
           <div
@@ -158,7 +158,8 @@ export default class Register extends Component {
             >
               {!this.state.successful && (
                 <div>
-                  <h2 className="form-signin-heading">Register new Company</h2>
+                <h4 className="form-signin-heading">Create a New Account</h4>
+                <div style={{marginTop: "40px"}}>
                   <p>
                     <Input
                       type="text"
@@ -193,11 +194,13 @@ export default class Register extends Component {
                     />
                   </p>
                   <button
-                    className="btn btn-lg btn-primary btn-block mt-3"
+                    className="btn btn-primary"
                     type="submit"
                   >
                     Sign up
                   </button>
+                  <a style={{marginLeft: "10px"}} className="btn btn-danger" href="/">Cancel</a>
+                </div>
                 </div>
               )}
               {this.state.message && (
