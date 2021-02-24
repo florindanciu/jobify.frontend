@@ -91,14 +91,16 @@ export default class Login extends Component {
           </div>
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0" id="login-form">
             <Form
+              style={{ width: "500px" }}
               className="form-signin"
               onSubmit={this.handleLogin}
               ref={(c) => {
                 this.form = c;
               }}
             >
-              {" "}
-              <h2 className="form-signin-heading">Login as User/Company</h2>
+              <div style={{ marginBottom: "30px" }}>
+                <h4 className="form-signin-heading">Welcome back!</h4>
+              </div>
               {this.props.location.state !== undefined && (
                 <div className="form-group">
                   <div className="alert alert-success" role="alert">
@@ -137,6 +139,13 @@ export default class Login extends Component {
                 )}
                 <span>Login</span>
               </button>
+              <a
+                style={{ marginLeft: "10px" }}
+                className="btn btn-danger"
+                href="/"
+              >
+                Cancel
+              </a>
               {this.state.message && (
                 <div className="form-group">
                   <div className="alert alert-danger" role="alert">

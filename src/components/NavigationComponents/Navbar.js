@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { Link } from "react-router-dom";
+import { NavDropdown } from "react-bootstrap";
 
 import AuthService from "../../services/auth-service";
 
@@ -124,17 +125,14 @@ const Navbar = () => {
                     Login
                   </Link>
                 </li>
-
-                <li className="nav-item">
-                  <Link to={"/user/register"} className="nav-link">
-                    Sign Up
-                  </Link>
-                </li>
-                <li className="nav-item">
-                  <Link to={"/register/company"} className="nav-link">
-                    Sign Up As Company
-                  </Link>
-                </li>
+                <NavDropdown title="Sign Up" id="basic-nav-dropdown">
+                  <NavDropdown.Item href="/user/register">
+                    User Registration
+                  </NavDropdown.Item>
+                  <NavDropdown.Item href="/register/company">
+                    Company Registration
+                  </NavDropdown.Item>
+                </NavDropdown>
               </div>
             )}
           </ul>
