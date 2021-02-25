@@ -45,7 +45,8 @@ export default function AddJobForm(props) {
   }
 
   return (
-    <div>
+    <div className="row">
+      <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
       <form
         style={{marginBottom:"5%", marginTop:"5%"}}
         className="form-signin"
@@ -53,7 +54,7 @@ export default function AddJobForm(props) {
         action="/login"
         onSubmit={submitForm}
       >
-        <h2 style={{marginBottom:"20%"}} className="form-signin-heading">Add job</h2>
+        <h2 style={{marginBottom:"10%"}} className="form-signin-heading">Create New Job</h2>
         <p>
           <input
             type="text"
@@ -132,6 +133,13 @@ export default function AddJobForm(props) {
             Cancel
           </button>
       </form>
+      </div>
+      <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <img
+          className="img-fluid"
+          src={process.env.PUBLIC_URL + "/addJob.jpg"}
+        />
+      </div>
     </div>
   );
 }

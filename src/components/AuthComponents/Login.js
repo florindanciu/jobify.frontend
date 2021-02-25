@@ -83,12 +83,6 @@ export default class Login extends Component {
     return (
       <React.Fragment>
         <div className="row">
-          <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
-            <img
-              className="img-fluid"
-              src={process.env.PUBLIC_URL + "/register.jpg"}
-            />
-          </div>
           <div className="col-lg-6 col-md-12 mb-4 mb-md-0" id="login-form">
             <Form
               style={{ width: "500px" }}
@@ -160,6 +154,13 @@ export default class Login extends Component {
                 }}
               />
             </Form>
+          </div>
+          <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+            <img
+            style={{marginBottom: "50px"}}
+              className="img-fluid"
+              src={process.env.PUBLIC_URL + "/login.png"}
+            />
           </div>
         </div>
       </React.Fragment>

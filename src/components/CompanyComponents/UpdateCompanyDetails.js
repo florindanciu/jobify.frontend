@@ -47,8 +47,16 @@ export default function UpdateCompanyDetails() {
   };
 
   return (
-        <form style={{marginBottom:"5%", marginTop:"5%"}} className="form-signin">
-        <h3 style={{marginBottom:"20%"}}>Update Company</h3>
+    <div className="row">
+    <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <img style={{marginBottom: "60px"}} 
+          className="img-fluid"
+          src={process.env.PUBLIC_URL + "/companyUpdate.png"}
+        />
+      </div>
+      <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
+        <form style={{ marginTop:"5%"}} className="form-signin">
+        <h3 style={{marginBottom:"10%"}}>Update Company</h3>
           <p>
             <input
               className="form-control"
@@ -100,5 +108,7 @@ export default function UpdateCompanyDetails() {
             Cancel
           </button>
         </form>
+        </div>
+        </div>
   );
 }

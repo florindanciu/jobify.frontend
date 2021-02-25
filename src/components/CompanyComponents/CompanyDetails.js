@@ -63,7 +63,7 @@ const CompanyDetails = (props) => {
           </div>
 
           <div class="profile-usertitle">
-            <div class="profile-usertitle-name">
+            <div class="profile-usertitle-name" style={{marginBottom: "60px"}}>
               <h3>
                 <strong>{company.name}</strong>
               </h3>
@@ -80,28 +80,39 @@ const CompanyDetails = (props) => {
           ) : !currentUser ? (
             ""
           ) : currentUser.id === companyId ? (
-            <div class="profile-userbuttons mt-5">
-              <a
-                href={`/companies/update/${companyId}`}
-                className="btn btn-success btn-sm"
-                role="button"
-              >
-                Edit company
-              </a>
-              <button
-                type="button"
-                class="btn btn-danger btn-sm"
-                onClick={deleteCompany}
-              >
-                Delete company
-              </button>
-              <a
-                className="btn btn-primary"
-                type="button"
-                href={`/companies/${company.id}/jobs`}
-              >
-                Add new job
-              </a>
+            <div className="profile-userbuttons">
+              <div>
+                <a
+                  className="btn btn-primary btn-sm"
+                  type="button"
+                  href={`/companies/${company.id}/jobs`}
+                >
+                  Add New Job
+                </a>
+                <a
+                  href={`/companies/update/${companyId}`}
+                  className="btn btn-success btn-sm"
+                  role="button"
+                >
+                  Edit Company
+                </a>
+              </div>
+              <div>
+                <button
+                  type="button"
+                  class="btn btn-danger btn-sm"
+                  onClick={deleteCompany}
+                >
+                  Delete company
+                </button>
+                <a
+                  style={{ width: "93px" }}
+                  className="btn btn-danger btn-sm"
+                  href="/"
+                >
+                  Cancel
+                </a>
+              </div>
             </div>
           ) : (
             ""
@@ -110,7 +121,6 @@ const CompanyDetails = (props) => {
       </div>
       <div class="col-md-9">
         <div class="profile-content">
-          <hr />
           <h3>About us</h3>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
           ultricies ultricies nibh, vitae euismod turpis molestie in. Etiam

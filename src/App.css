@@ -164,6 +164,7 @@ footer {
   font-weight: 600;
   padding: 6px 15px;
   margin-right: 5px;
+  margin-top: 5px;
 }
 
 .profile-userbuttons .btn:last-child {
@@ -211,7 +212,8 @@ footer {
 
 /* Profile Content */
 .profile-content {
-  padding: 20px;
+  text-align: left;
+  padding: 30px;
   background: #fff;
   min-height: 460px;
 }
