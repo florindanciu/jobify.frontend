@@ -9,3 +9,19 @@
       - React hooks for code reusability and readability
       - Axios for data manipulation
       - CSS - Bootstrap - Material UI for design
+
+<p align="center">
+    <img src="/jobs.png" data-canonical-src="/companies.png" width="800" />
+</p>
+<p align="center">
+    <img src="/companies.png" data-canonical-src="/companies.png" width="800" />
+</p>   
+<p align="center">
+    <img src="/user_register.png" data-canonical-src="/companies.png" width="800" />
+</p>
+<p align="center">
+    <img src="/company_register.png" data-canonical-src="/companies.png" width="800" />
+</p> 
+<p align="center">
+    <img src="/developers.png" data-canonical-src="/companies.png" width="800" />
+</p>
