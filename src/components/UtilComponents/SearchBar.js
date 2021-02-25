@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { JobContext } from "../JobComponents/JobsContext";
+import { Row, Col, Container } from "react-bootstrap";
 import Loading from "./Loading";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -56,20 +57,24 @@ export default function SearchBar() {
   };
 
   const search = (
-    <div className="container">
-      <div className="mb-3">
-        <input
-          type="text"
-          className="form-control"
-          onChange={searchByName}
-          placeholder="What job are you looking for?"
-          pattern={2}
-        />
-        <div className="mb-3">
+    <Container>
+      <Row>
+        <Col>
+          <input
+            style={{ height: "60px" }}
+            type="text"
+            className="form-control"
+            onChange={searchByName}
+            placeholder="What job are you looking for?"
+            pattern={2}
+          />
+        </Col>
+        <Col>
           <select
+            style={{ height: "60px" }}
+            className="form-control"
             aria-label="Select a location..."
-            className="form-select form-select-sm mb-3"
-            aria-label=".form-select-sm example"
+            // aria-label=".form-select-sm example"
             id="gender"
             name="gender"
             onChange={searchByLocation}
@@ -85,36 +90,38 @@ export default function SearchBar() {
                 ))
               : ""}
           </select>
-        </div>
-      </div>
-      {jobLocation.length > 0 ? (
-        <Button
-          variant="outlined"
-          color="primary"
-          href={`/jobs/name/${"undefined"}/location/${jobLocation}`}
-        >
-          See jobs
-        </Button>
-      ) : jobName.length > 3 && jobLocation.length === 0 ? (
-        <Button
-          variant="outlined"
-          color="primary"
-          href={`/jobs/name/${jobName}/location/${"undefined"}`}
-        >
-          See jobs
-        </Button>
-      ) : jobLocation.length > 0 && jobName.length > 3 ? (
-        <Button
-          variant="outlined"
-          color="primary"
-          href={`/jobs/name/${jobName}/location/${jobLocation}`}
-        >
-          See jobs
-        </Button>
-      ) : (
-        ""
-      )}
-    </div>
+        </Col>
+      </Row>
+      <Row style={{ marginTop: "20px", marginLeft: "1px", marginRight: "1px" }}>
+        {jobLocation.length > 0 ? (
+          <Button
+            variant="outlined"
+            color="primary"
+            href={`/jobs/name/${"undefined"}/location/${jobLocation}`}
+          >
+            See jobs
+          </Button>
+        ) : jobName.length > 3 && jobLocation.length === 0 ? (
+          <Button
+            variant="outlined"
+            color="primary"
+            href={`/jobs/name/${jobName}/location/${"undefined"}`}
+          >
+            See jobs
+          </Button>
+        ) : jobLocation.length > 0 && jobName.length > 3 ? (
+          <Button
+            variant="outlined"
+            color="primary"
+            href={`/jobs/name/${jobName}/location/${jobLocation}`}
+          >
+            See jobs
+          </Button>
+        ) : (
+          ""
+        )}
+      </Row>
+    </Container>
   );
 
   const content = isLoading ? (
